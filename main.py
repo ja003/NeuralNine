@@ -1,5 +1,4 @@
-from T_2_LinearRegression import *
-from LinearRegression import *
+from MachineLearning.t2_LinearRegression.LinearRegression import *
 
 # Python Machine Learning Tutorial #2 - Linear Regression
 # t2_func()

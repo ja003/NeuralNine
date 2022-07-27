@@ -1,8 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-points = pd.read_csv('data.csv')
-
+points = pd.read_csv('MachineLearning/t2_LinearRegression/data.csv')
 
 def loss_function(m, b, points):
     total_error = 0
