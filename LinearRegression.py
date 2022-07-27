@@ -30,10 +30,57 @@ def gradient_descent(m_now, b_now, points, L):
 def linear_regression_main():
     m = 0
     b = 0
-    L = 0.0001
-    epochs = 1000
+    L = 0.00001
+    epochs = 100
+
+    plt.ion()
+
+    fig = plt.figure()
+    ax1 = fig.add_subplot(211)
+    ax2 = fig.add_subplot(212)
+
+    # styling
+    fig.set_facecolor('#121212')
+    ax1.set_title('Linear Regression', color='white')
+    ax2.set_title('Loss Function', color='white')
+    ax1.grid(True, color='#323232')
+    ax2.grid(True, color='#323232')
+    ax1.set_facecolor('black')
+    ax2.set_facecolor('black')
+    ax1.tick_params(axis='x', colors='white')
+    ax1.tick_params(axis='y', colors='white')
+    ax2.tick_params(axis='x', colors='white')
+    ax2.tick_params(axis='y', colors='white')
+    plt.tight_layout()
+    ax1.scatter(points.iloc[:, 0], points.iloc[:, 1], color='#EF6C35')
+    line, = ax1.plot(range(20, 80), range(20, 80), color='#00ABAB')
+    line2, = ax2.plot(0, 0, color='#00ABAB')
+
+    ax2.set_xlim([0, epochs])
+    ax2.set_ylim([0, loss_function(m, b, points)])
+
+    ax1.scatter(points.iloc[:, 0], points.iloc[:, 1])
+    line, = ax1.plot(range(20, 80), range(20, 80), color='red')
+    line2, = ax2.plot(0, 0)
+
+    # for i in range(epochs):
+    #     m, b = gradient_descent(m, b, points, L)
+    #
+    # print(m, b)
+
+    xlist = []
+    ylist = []
 
     for i in range(epochs):
         m, b = gradient_descent(m, b, points, L)
+        line.set_ydata(m * range(20, 80) + b)
 
-    print(m, b)
+        xlist.append(i)
+        ylist.append(loss_function(m, b, points))
+        line2.set_xdata(xlist)
+        line2.set_ydata(ylist)
+
+        fig.canvas.draw()
+
+    plt.ioff()
+    plt.show()
