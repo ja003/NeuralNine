@@ -3,6 +3,7 @@ from MachineLearning.t3_KNearestNeighbors.yt_KNearestNeighbors import *
 from MachineLearning.t4_SupportVectorMachines.yt_SupportVectorMachines import *
 from MachineLearning.t5_DecisionTrees.yt_DecisionTrees import *
 from MachineLearning.t6_KMeansClustering.yt_KMeansClustering import *
+from MachineLearning.t8_HandwrittenDigitRecognition.yt_HandwrittenDigitRecognition import *
 
 # Python Machine Learning Tutorial #2 - Linear Regression
 # t2_func()
@@ -24,4 +25,8 @@ from MachineLearning.t6_KMeansClustering.yt_KMeansClustering import *
 
 # Python Machine Learning Tutorial #6 - K-Means Clustering
 # https://youtu.be/Hoy6iJW5ryM
-k_means_clustering_main()
+# k_means_clustering_main()
+
+# Python Machine Learning Tutorial #8 - Handwritten Digit Recognition with Tensorflow
+# https://youtu.be/Zi4i7Q0zrBs
+handwritten_digit_recognition_main()
